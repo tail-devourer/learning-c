@@ -4,7 +4,7 @@ int main() {
     unsigned int n;
 
     printf("Enter n: ");
-    scanf("%u", &n);    // Throws segmentation fault if user enters a value less than 0.
+    scanf("%u", &n);
 
     if (n == 0) {
         return 0;
