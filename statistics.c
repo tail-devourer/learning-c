@@ -1,21 +1,25 @@
 #include <stdio.h>
 
 int main() {
-    int n;
+    unsigned int n;
 
     printf("Enter n: ");
-    scanf("%d", &n);
+    scanf("%u", &n);    // Throws segmentation fault if user enters a value less than 0.
+
+    if (n == 0) {
+        return 0;
+    }
 
     double ar[n];
 
-    for (int i=0; i<n; i++) {
-        printf("Enter ar[%d]: ", i);
+    for (unsigned int i=0; i<n; i++) {
+        printf("Enter ar[%u]: ", i);
         scanf("%lf", &ar[i]);
     }
 
     double sum = 0;
 
-    for (int i=0; i<n; i++) {
+    for (unsigned int i=0; i<n; i++) {
         sum += ar[i];
     }
 
